@@ -16,11 +16,11 @@ for target in targets:
     print(f"Processing {name}")
 
     # search and download lightkurve data
-    search_resut = lk.search_lightkurve(name, author="Kepler", wuarted=1)
+    search_resut = lk.search_lightcurve(name, author="Kepler", quarter=1)
     lc = search_resut.download()
 
     # flatten and fold lightkurve
-    flat_lc = lc.flatten(windows_length=401)
+    flat_lc = lc.flatten(window_length=401)
     folded_lc = flat_lc.fold(period=target["period"])
 
     fig, ax = plt.subplots(figsize=(4,4))
