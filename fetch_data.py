@@ -16,3 +16,23 @@ for target in targets:
     print(f"Processing {name}")
 
     # search and download lightkurve data
+    search_resut = lk.search_lightkurve(name, author="Kepler", wuarted=1)
+    lc = search_resut.download()
+
+    # flatten and fold lightkurve
+    flat_lc = lc.flatten(windows_length=401)
+    folded_lc = flat_lc.fold(period=target["period"])
+
+    fig, ax = plt.subplots(figsize=(4,4))
+    folded_lc.scatter(ax=ax, s=1)
+    plt.axis("off")
+    img_path = f"data/images/{name}.png"
+    plt.savefig(img_path, bbox_inches="tight", pad_inches=0)
+    plt.close()
+
+    # save metadata
+    meta_path = f"data/metadata/{name}.json"
+    with open(meta_path, "w") as f:
+        json.dump(target, f)
+
+    print("Data fetching complete!")
