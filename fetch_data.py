@@ -36,3 +36,4 @@ for target in targets:
         json.dump(target, f)
 
     print("Data fetching complete!")
+    
