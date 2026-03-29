@@ -1,0 +1,9 @@
+lightkurve
+transformers
+torch
+torchvision
+chromadb
+streamlit
+openai
+pillow
+matplotlib
