@@ -20,25 +20,44 @@ meta_dir = "data/metadata"
 print("Generating emebddings and building index...")
 for filename in os.listdir(image_dir):
     if filename.endswith(".png"):
-        name = filename.split(".")[0]
+        try:
+            name = filename.split(".")[0]
 
-        # load image
-        image = Image.open(os.path.join(image_dir, filename)).convert("RGB")
+            # load image
+            image = Image.open(os.path.join(image_dir, filename)).convert("RGB")
 
-        # extract visual features
-        inputs = processor(images=image, return_tensors="pt")
-        with torch.no_grad():
-            image_features = model.get_image_features(**inputs)
-        
-        # convert tensor to a flat python list for ChromaDB
-        embedding = image_features.flatten().tolist()
+            # extract visual features
+            inputs = processor(images=image, return_tensors="pt")
+            with torch.no_grad():
+                image_features = model.get_image_features(**inputs)
 
-        # load associated metadata
-        with open(os.path.join(meta_dir, f"{name}.json"), "r") as f:
-            metadata = json.load(f)
+            # normalize embeddings
+            image_features = image_features / image_features.norm(dim=-1, keepdim=True)
 
-        # add vector to database
-        collection.add(embeddings=[embedding], metadatas=[metadata], ids=[name])
-        print("Added {name} to the vector database")
+            # convert to list
+            embedding = image_features[0].cpu().numpy().tolist()
 
+            # sanity check
+            if not isinstance(embedding, list) or len(embedding) == 0:
+                raise ValueError("Invalid embedding")
+            
+            # load metadata
+            meta_path = os.path.join(meta_dir, f"{name}.json")
+            with open(meta_path, "r") as f:
+                metadata = json.load(f)
+            
+            doc_id = str(name)
+
+            # add to DB
+            collection.add(
+                embeddings=[embedding],
+                metadatas=[metadata],
+                ids=[doc_id]
+            )
+
+            print(f"Added {name} ✅")
+
+        except Exception as e:
+            print(f"Error processing {filename}: {e}")
+            
 print("Index built successfully")
