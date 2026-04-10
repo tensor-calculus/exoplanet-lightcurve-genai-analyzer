@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-595 c",
+  "period": 12.386,
+  "temp": 679.0,
+  "radius_earth": 1.01,
+  "type": "Terrestrial (Earth-like)",
+  "host_star": "Kepler-595",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 3.3,
+  "star_temp": 5138.0
+}

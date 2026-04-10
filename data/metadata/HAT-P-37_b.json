@@ -1,0 +1,12 @@
+{
+  "name": "HAT-P-37 b",
+  "period": 2.7974,
+  "temp": 1271.0,
+  "radius_earth": 13.2,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "HAT-P-37",
+  "discovery_facility": "HATNet",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 371.53,
+  "star_temp": 5500.0
+}

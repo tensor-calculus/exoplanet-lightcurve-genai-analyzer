@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1600 c",
+  "period": 7.298,
+  "temp": 786.0,
+  "radius_earth": 1.94,
+  "type": "Super-Earth",
+  "host_star": "Kepler-1600",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 4.43,
+  "star_temp": 5119.0
+}

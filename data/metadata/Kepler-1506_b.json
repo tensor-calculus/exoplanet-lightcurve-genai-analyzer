@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1506 b",
+  "period": 14.0329,
+  "temp": 783.0,
+  "radius_earth": 1.32,
+  "type": "Super-Earth",
+  "host_star": "Kepler-1506",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 2.3,
+  "star_temp": 5676.0
+}

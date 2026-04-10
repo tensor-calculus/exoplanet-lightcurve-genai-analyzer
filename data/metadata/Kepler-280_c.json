@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-280 c",
+  "period": 4.8071,
+  "temp": 1088.0,
+  "radius_earth": 2.01,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-280",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 4.7,
+  "star_temp": 5744.0
+}

@@ -1,0 +1,12 @@
+{
+  "name": "HD 3167 c",
+  "period": 29.8454,
+  "temp": 564.0,
+  "radius_earth": 3.0,
+  "type": "Sub-Neptune",
+  "host_star": "HD 3167",
+  "discovery_facility": "K2",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 11.13,
+  "star_temp": 5261.0
+}

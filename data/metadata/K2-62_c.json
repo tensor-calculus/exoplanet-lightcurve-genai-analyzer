@@ -1,0 +1,12 @@
+{
+  "name": "K2-62 c",
+  "period": 16.197,
+  "temp": 495.0,
+  "radius_earth": 1.99,
+  "type": "Super-Earth",
+  "host_star": "K2-62",
+  "discovery_facility": "K2",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 4.62,
+  "star_temp": 4455.0
+}

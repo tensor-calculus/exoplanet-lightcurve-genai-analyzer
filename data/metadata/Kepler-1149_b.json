@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1149 b",
+  "period": 3.7309,
+  "temp": 1128.0,
+  "radius_earth": 1.44,
+  "type": "Super-Earth",
+  "host_star": "Kepler-1149",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 2.67,
+  "star_temp": 5833.0
+}

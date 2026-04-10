@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-311 c",
+  "period": 19.7383,
+  "temp": 744.0,
+  "radius_earth": 1.43,
+  "type": "Super-Earth",
+  "host_star": "Kepler-311",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 2.63,
+  "star_temp": 5905.0
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1208 b",
+  "period": 11.0851,
+  "temp": 665.0,
+  "radius_earth": 2.32,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-1208",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 5.99,
+  "star_temp": 5001.0
+}

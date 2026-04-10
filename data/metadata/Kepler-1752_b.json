@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1752 b",
+  "period": 56.3585,
+  "temp": 419.0,
+  "radius_earth": 4.54,
+  "type": "Neptune-like",
+  "host_star": "Kepler-1752",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 18.7,
+  "star_temp": 5446.0
+}

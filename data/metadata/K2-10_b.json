@@ -1,0 +1,12 @@
+{
+  "name": "K2-10 b",
+  "period": 19.3055,
+  "temp": 649.0,
+  "radius_earth": 3.77,
+  "type": "Sub-Neptune",
+  "host_star": "K2-10",
+  "discovery_facility": "K2",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 25.2,
+  "star_temp": 5533.0
+}

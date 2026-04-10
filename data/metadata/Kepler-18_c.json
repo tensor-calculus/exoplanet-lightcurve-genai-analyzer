@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-18 c",
+  "period": 7.6416,
+  "temp": 899.0,
+  "radius_earth": 5.49,
+  "type": "Neptune-like",
+  "host_star": "Kepler-18",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 17.3,
+  "star_temp": 5345.0
+}

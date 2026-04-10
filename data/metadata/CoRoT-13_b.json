@@ -1,0 +1,12 @@
+{
+  "name": "CoRoT-13 b",
+  "period": 4.0352,
+  "temp": 1700.0,
+  "radius_earth": 9.92,
+  "type": "Neptune-like",
+  "host_star": "CoRoT-13",
+  "discovery_facility": "CoRoT",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 415.7,
+  "star_temp": 5945.0
+}

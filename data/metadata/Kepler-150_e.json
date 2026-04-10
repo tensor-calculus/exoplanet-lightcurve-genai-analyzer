@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-150 e",
+  "period": 30.8266,
+  "temp": 544.0,
+  "radius_earth": 3.12,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-150",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 9.91,
+  "star_temp": 5560.0
+}

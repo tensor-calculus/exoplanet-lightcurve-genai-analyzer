@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-45 b",
+  "period": 2.4552,
+  "temp": 1000.0,
+  "radius_earth": 10.76,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "Kepler-45",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 160.5,
+  "star_temp": 3820.0
+}

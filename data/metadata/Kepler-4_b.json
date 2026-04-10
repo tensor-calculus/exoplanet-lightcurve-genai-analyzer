@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-4 b",
+  "period": 3.2135,
+  "temp": 1650.0,
+  "radius_earth": 4.0,
+  "type": "Neptune-like",
+  "host_star": "Kepler-4",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 24.47,
+  "star_temp": 5857.0
+}

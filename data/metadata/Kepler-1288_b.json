@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1288 b",
+  "period": 2.7612,
+  "temp": 2017.0,
+  "radius_earth": 1.12,
+  "type": "Terrestrial (Earth-like)",
+  "host_star": "Kepler-1288",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 1.46,
+  "star_temp": 6132.0
+}

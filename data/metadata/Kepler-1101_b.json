@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1101 b",
+  "period": 81.3151,
+  "temp": 393.0,
+  "radius_earth": 2.47,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-1101",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 6.66,
+  "star_temp": 5614.0
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-595 b",
+  "period": 25.3029,
+  "temp": 535.0,
+  "radius_earth": 3.71,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-595",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 17.4,
+  "star_temp": 5138.0
+}

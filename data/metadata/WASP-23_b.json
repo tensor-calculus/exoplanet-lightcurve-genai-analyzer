@@ -1,0 +1,12 @@
+{
+  "name": "WASP-23 b",
+  "period": 2.9444,
+  "temp": 1076.5,
+  "radius_earth": 10.78,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "WASP-23",
+  "discovery_facility": "SuperWASP",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 280.95,
+  "star_temp": 5150.0
+}

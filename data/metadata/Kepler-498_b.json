@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-498 b",
+  "period": 9.6138,
+  "temp": 931.0,
+  "radius_earth": 3.03,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-498",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 9.43,
+  "star_temp": 5744.0
+}

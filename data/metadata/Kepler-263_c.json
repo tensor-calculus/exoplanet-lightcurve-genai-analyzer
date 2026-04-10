@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-263 c",
+  "period": 47.3328,
+  "temp": 386.0,
+  "radius_earth": 2.47,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-263",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 6.66,
+  "star_temp": 5265.0
+}

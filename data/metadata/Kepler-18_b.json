@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-18 b",
+  "period": 3.5047,
+  "temp": 1165.0,
+  "radius_earth": 2.0,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-18",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 6.9,
+  "star_temp": 5345.0
+}

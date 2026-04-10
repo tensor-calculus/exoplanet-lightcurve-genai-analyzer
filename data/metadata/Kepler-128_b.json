@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-128 b",
+  "period": 15.0,
+  "temp": 968.0,
+  "radius_earth": 1.42,
+  "type": "Super-Earth",
+  "host_star": "Kepler-128",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 3.79,
+  "star_temp": 6072.0
+}

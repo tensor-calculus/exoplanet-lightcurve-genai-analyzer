@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-817 b",
+  "period": 3.9901,
+  "temp": 1124.0,
+  "radius_earth": 9.03,
+  "type": "Neptune-like",
+  "host_star": "Kepler-817",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 60.2,
+  "star_temp": 5861.0
+}

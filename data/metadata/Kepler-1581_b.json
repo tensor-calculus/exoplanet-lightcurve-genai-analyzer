@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1581 b",
+  "period": 6.2839,
+  "temp": 1108.0,
+  "radius_earth": 0.8,
+  "type": "Terrestrial (Earth-like)",
+  "host_star": "Kepler-1581",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 0.44,
+  "star_temp": 6022.0
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-560 b",
+  "period": 18.4776,
+  "temp": 298.0,
+  "radius_earth": 1.72,
+  "type": "Super-Earth",
+  "host_star": "Kepler-560",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 3.61,
+  "star_temp": 3556.0
+}

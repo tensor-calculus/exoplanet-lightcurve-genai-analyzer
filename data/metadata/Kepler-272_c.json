@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-272 c",
+  "period": 6.0573,
+  "temp": 947.0,
+  "radius_earth": 1.79,
+  "type": "Super-Earth",
+  "host_star": "Kepler-272",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 97.8,
+  "star_temp": 5297.0
+}

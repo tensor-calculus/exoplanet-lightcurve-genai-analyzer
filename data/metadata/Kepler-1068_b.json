@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1068 b",
+  "period": 16.9234,
+  "temp": 702.0,
+  "radius_earth": 3.63,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-1068",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 12.8,
+  "star_temp": 5806.0
+}

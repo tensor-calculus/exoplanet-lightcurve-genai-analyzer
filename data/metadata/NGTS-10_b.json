@@ -1,0 +1,12 @@
+{
+  "name": "NGTS-10 b",
+  "period": 0.7669,
+  "temp": 1332.0,
+  "radius_earth": 13.51,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "NGTS-10",
+  "discovery_facility": "Next-Generation Transit Survey (NGTS)",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 687.15,
+  "star_temp": 4600.0
+}

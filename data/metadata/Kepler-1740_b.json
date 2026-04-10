@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-1740 b",
+  "period": 8.1724,
+  "temp": 858.0,
+  "radius_earth": 3.32,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-1740",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 11.0,
+  "star_temp": 5705.0
+}

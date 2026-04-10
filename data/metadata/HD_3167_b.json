@@ -1,0 +1,12 @@
+{
+  "name": "HD 3167 b",
+  "period": 0.9596,
+  "temp": 1774.0,
+  "radius_earth": 1.67,
+  "type": "Super-Earth",
+  "host_star": "HD 3167",
+  "discovery_facility": "K2",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 4.97,
+  "star_temp": 5261.0
+}

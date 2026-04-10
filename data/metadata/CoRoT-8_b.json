@@ -1,0 +1,12 @@
+{
+  "name": "CoRoT-8 b",
+  "period": 6.2123,
+  "temp": 870.0,
+  "radius_earth": 6.39,
+  "type": "Neptune-like",
+  "host_star": "CoRoT-8",
+  "discovery_facility": "CoRoT",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 69.92,
+  "star_temp": 5080.0
+}

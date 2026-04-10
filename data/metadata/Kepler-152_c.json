@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-152 c",
+  "period": 88.2551,
+  "temp": 326.0,
+  "radius_earth": 2.39,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-152",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 6.3,
+  "star_temp": 5088.0
+}

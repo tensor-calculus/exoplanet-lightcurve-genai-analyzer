@@ -1,9 +1,11 @@
-lightkurve
 transformers
 torch
 torchvision
 chromadb
 streamlit
-openai
+google-generativeai
+lightkurve
 pillow
 matplotlib
+requests
+numpy

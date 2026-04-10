@@ -1,0 +1,12 @@
+{
+  "name": "OGLE-TR-111 b",
+  "period": 4.0144,
+  "temp": 1019.0,
+  "radius_earth": 11.42,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "OGLE-TR-111",
+  "discovery_facility": "OGLE",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 174.8,
+  "star_temp": 5040.0
+}

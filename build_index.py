@@ -1,3 +1,8 @@
+"""
+Build ChromaDB vector index from exoplanet light curve images.
+Uses CLIP to generate normalized embeddings for similarity search.
+"""
+
 import os
 import json
 import chromadb
@@ -5,59 +10,142 @@ from transformers import CLIPProcessor, CLIPModel
 from PIL import Image
 import torch
 
-print("Loading CLIP model...")
-model_id = "openai/clip-vit-base-patch32"
-model = CLIPModel.from_pretrained(model_id)
-processor = CLIPProcessor.from_pretrained(model_id)
+# --- Configuration ---
+IMAGE_DIR = "data/images"
+META_DIR = "data/metadata"
+CHROMA_PATH = "./chroma_db"
+COLLECTION_NAME = "exoplanets"
+BATCH_SIZE = 16
 
-print("Initializing ChromaDB...")
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
-collection = chroma_client.get_or_create_collection(name="exoplanets")
 
-image_dir = "data/images"
-meta_dir = "data/metadata"
+def main():
+    print("=" * 60)
+    print("  ChromaDB Index Builder (CLIP Embeddings)")
+    print("=" * 60)
 
-print("Generating emebddings and building index...")
-for filename in os.listdir(image_dir):
-    if filename.endswith(".png"):
-        try:
-            name = filename.split(".")[0]
+    # --- Load CLIP Model ---
+    print("\nLoading CLIP model (openai/clip-vit-base-patch32)...")
+    model_id = "openai/clip-vit-base-patch32"
+    model = CLIPModel.from_pretrained(model_id)
+    processor = CLIPProcessor.from_pretrained(model_id)
+    model.eval()
+    print("  Model loaded.")
 
-            # load image
-            image = Image.open(os.path.join(image_dir, filename)).convert("RGB")
+    # --- Initialize ChromaDB ---
+    print("\nInitializing ChromaDB...")
+    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
 
-            # extract visual features
-            inputs = processor(images=image, return_tensors="pt")
-            with torch.no_grad():
-                image_features = model.get_image_features(**inputs)
+    # Delete existing collection and recreate to avoid stale data
+    try:
+        chroma_client.delete_collection(name=COLLECTION_NAME)
+        print("  Deleted existing collection.")
+    except Exception:
+        pass
 
-            # normalize embeddings
-            image_features = image_features / image_features.norm(dim=-1, keepdim=True)
+    collection = chroma_client.get_or_create_collection(
+        name=COLLECTION_NAME,
+        metadata={"hnsw:space": "cosine"}  # Use cosine similarity
+    )
+    print(f"  Collection '{COLLECTION_NAME}' ready.")
 
-            # convert to list
-            embedding = image_features[0].cpu().numpy().tolist()
+    # --- Gather files ---
+    image_files = sorted([
+        f for f in os.listdir(IMAGE_DIR)
+        if f.lower().endswith((".png", ".jpg", ".jpeg"))
+    ])
 
-            # sanity check
-            if not isinstance(embedding, list) or len(embedding) == 0:
-                raise ValueError("Invalid embedding")
-            
-            # load metadata
-            meta_path = os.path.join(meta_dir, f"{name}.json")
-            with open(meta_path, "r") as f:
-                metadata = json.load(f)
-            
-            doc_id = str(name)
+    if not image_files:
+        print(f"\nERROR: No images found in {IMAGE_DIR}/")
+        print("Run fetch_data.py first to generate planet data.")
+        return
 
-            # add to DB
-            collection.add(
-                embeddings=[embedding],
-                metadatas=[metadata],
-                ids=[doc_id]
-            )
+    print(f"\nFound {len(image_files)} images. Processing in batches of {BATCH_SIZE}...")
 
-            print(f"Added {name} ✅")
+    # --- Process in batches ---
+    total_added = 0
 
-        except Exception as e:
-            print(f"Error processing {filename}: {e}")
-            
-print("Index built successfully")
+    for batch_start in range(0, len(image_files), BATCH_SIZE):
+        batch_files = image_files[batch_start:batch_start + BATCH_SIZE]
+
+        batch_images = []
+        batch_metas = []
+        batch_ids = []
+
+        for filename in batch_files:
+            name = os.path.splitext(filename)[0]
+            img_path = os.path.join(IMAGE_DIR, filename)
+            meta_path = os.path.join(META_DIR, f"{name}.json")
+
+            if not os.path.exists(meta_path):
+                print(f"  SKIP {name}: no metadata file found")
+                continue
+
+            try:
+                image = Image.open(img_path).convert("RGB")
+                with open(meta_path, "r") as f:
+                    metadata = json.load(f)
+
+                batch_images.append(image)
+                batch_metas.append(metadata)
+                batch_ids.append(name)
+            except Exception as e:
+                print(f"  SKIP {name}: {e}")
+                continue
+
+        if not batch_images:
+            continue
+
+        # --- Generate CLIP embeddings for the batch ---
+        inputs = processor(images=batch_images, return_tensors="pt", padding=True)
+
+        with torch.no_grad():
+            image_features = model.get_image_features(**inputs)
+
+        # Handle different return types from CLIP
+        if not isinstance(image_features, torch.Tensor):
+            # Some versions return BaseModelOutputWithPooling
+            image_features = image_features.pooler_output if hasattr(image_features, 'pooler_output') else image_features[0]
+
+        # ✅ NORMALIZE embeddings (MUST match query-time normalization in app.py)
+        image_features = image_features / image_features.norm(dim=-1, keepdim=True)
+
+        # Convert to list of lists
+        embeddings = image_features.cpu().numpy().astype(float).tolist()
+
+        # --- ChromaDB metadata must have string/int/float values only ---
+        clean_metas = []
+        for meta in batch_metas:
+            clean = {}
+            for k, v in meta.items():
+                if v is None:
+                    continue  # skip None values
+                if isinstance(v, (str, int, float)):
+                    clean[k] = v
+                else:
+                    clean[k] = str(v)
+            clean_metas.append(clean)
+
+        # --- Add batch to ChromaDB ---
+        collection.add(
+            embeddings=embeddings,
+            metadatas=clean_metas,
+            ids=batch_ids
+        )
+
+        total_added += len(batch_ids)
+        print(f"  Added batch {batch_start // BATCH_SIZE + 1}: "
+              f"{total_added}/{len(image_files)} planets indexed")
+
+    # --- Summary ---
+    print(f"\n{'=' * 60}")
+    print(f"  Index built successfully!")
+    print(f"  Total planets indexed: {total_added}")
+    print(f"  ChromaDB path: {CHROMA_PATH}")
+    print(f"  Collection: {COLLECTION_NAME}")
+    count = collection.count()
+    print(f"  Verified count: {count}")
+    print(f"{'=' * 60}")
+
+
+if __name__ == "__main__":
+    main()

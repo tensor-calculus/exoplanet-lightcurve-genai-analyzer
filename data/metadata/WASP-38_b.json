@@ -1,0 +1,12 @@
+{
+  "name": "WASP-38 b",
+  "period": 6.8719,
+  "temp": 1250.0,
+  "radius_earth": 13.79,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "WASP-38",
+  "discovery_facility": "SuperWASP",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 1093.34,
+  "star_temp": 6180.0
+}

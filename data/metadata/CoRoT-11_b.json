@@ -1,0 +1,12 @@
+{
+  "name": "CoRoT-11 b",
+  "period": 2.9943,
+  "temp": 1657.0,
+  "radius_earth": 16.03,
+  "type": "Gas Giant (Jupiter-like)",
+  "host_star": "CoRoT-11",
+  "discovery_facility": "CoRoT",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 740.51,
+  "star_temp": 6440.0
+}

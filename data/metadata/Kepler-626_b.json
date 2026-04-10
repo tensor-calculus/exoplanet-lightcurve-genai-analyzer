@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-626 b",
+  "period": 14.4859,
+  "temp": 784.0,
+  "radius_earth": 2.29,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-626",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 5.86,
+  "star_temp": 5813.0
+}

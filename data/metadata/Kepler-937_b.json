@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-937 b",
+  "period": 67.6688,
+  "temp": 495.0,
+  "radius_earth": 3.72,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-937",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 13.4,
+  "star_temp": 6095.0
+}

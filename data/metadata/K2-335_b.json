@@ -1,0 +1,12 @@
+{
+  "name": "K2-335 b",
+  "period": 12.2832,
+  "temp": 949.0,
+  "radius_earth": 2.21,
+  "type": "Sub-Neptune",
+  "host_star": "K2-335",
+  "discovery_facility": "K2",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 5.52,
+  "star_temp": 6222.0
+}

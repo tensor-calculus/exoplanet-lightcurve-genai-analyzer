@@ -1,0 +1,12 @@
+{
+  "name": "Kepler-644 b",
+  "period": 3.1739,
+  "temp": 1655.0,
+  "radius_earth": 3.15,
+  "type": "Sub-Neptune",
+  "host_star": "Kepler-644",
+  "discovery_facility": "Kepler",
+  "lightcurve_source": "Synthetic",
+  "mass_earth": 10.1,
+  "star_temp": 6747.0
+}
